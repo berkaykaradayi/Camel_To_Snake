@@ -5,8 +5,6 @@
 #define bosluk endl
 
 using namespace std;
-const int MAX = 100;
-const string st = "ay";
 
 void camel_to_snake(char char_array[]);
 
@@ -31,6 +29,7 @@ int main()
 
 	cout << bosluk << "Entered string: " << char_array << bosluk;
 
+	cout << "Here is your output: ";
 	camel_to_snake(char_array);
 	return 0;
 }
