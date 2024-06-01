@@ -21,9 +21,7 @@ int main()
 	const int length = str.length();
 
 	// declaring character array (+1 for null terminator) 
-
-	char* char_array = new char[length + 1];
-	//char *temp= new char[length + 1];		
+	char* char_array = new char[length + 1];	
 
 	char_array = &str[0]; // converting string to char array for operation
 
@@ -37,8 +35,16 @@ int main()
 void camel_to_snake(char char_array[])
 {	
 	int i = 0;
+	int flag = 0;
 	while (char_array[i]!='\0')
 	{
+		if (isupper(char_array[0]) && flag!=1)
+		{
+			cout << (char)tolower(char_array[0]);
+			i++;
+			flag = 1;
+		}
+		
 		if (char_array[i] != ' ')
 		{
 			if (islower(char_array[i]))
@@ -54,8 +60,10 @@ void camel_to_snake(char char_array[])
 
 		}
 
-		else
+			else
 			i++; // incrementing of i, if there is a blank char in sentence.
+		
+		
 		
 	}
 
